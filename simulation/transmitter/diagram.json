@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": 37, "left": -271.2, "attrs": {} },
+    { "type": "board-esp32-c3-devkitm-1", "id": "esp", "top": 9.3, "left": -32.58, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -154.2,
+      "left": -282.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick3",
+      "top": -154.2,
+      "left": -157.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick4",
+      "top": -154.2,
+      "left": -33,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick5",
+      "top": -154.2,
+      "left": 91.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick6",
+      "top": -154.2,
+      "left": 226.2,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.5", "bb1:17b.j", "black", [ "h0" ] ],
+    [ "esp:5V.2", "bb1:17b.i", "red", [ "h0" ] ],
+    [ "bb1:1b.j", "bb1:1t.a", "green", [ "v0" ] ],
+    [ "bb1:2t.b", "bb1:2b.i", "green", [ "v0" ] ],
+    [ "bb1:13t.a", "joystick1:GND", "black", [ "v-76.8", "h-67.2" ] ],
+    [ "bb1:14t.a", "joystick3:GND", "black", [ "v-67.2", "h48" ] ],
+    [ "bb1:16t.a", "joystick5:GND", "black", [ "v-48", "h278.4" ] ],
+    [ "bb1:17t.a", "joystick6:GND", "black", [ "v-38.4", "h403.2" ] ],
+    [ "bb1:15t.a", "joystick4:GND", "black", [ "v-57.6", "h163.2" ] ],
+    [ "bb1:13t.b", "joystick1:VCC", "red", [ "v-76.8", "h-105.6" ] ],
+    [ "bb1:15t.b", "joystick4:VCC", "red", [ "v-76.8", "h124.8" ] ],
+    [ "bb1:16t.b", "joystick5:VCC", "red", [ "v-57.6", "h240", "v-38.4" ] ],
+    [ "bb1:17t.b", "joystick6:VCC", "red", [ "v-48", "h364.8" ] ],
+    [ "bb1:14t.b", "joystick3:VCC", "red", [ "v-86.4", "h9.6" ] ],
+    [ "joystick1:HORZ", "esp:2", "orange", [ "v96", "h201.6" ] ],
+    [ "joystick3:HORZ", "esp:3", "orange", [ "v0" ] ],
+    [ "joystick4:HORZ", "esp:0", "orange", [ "v0" ] ],
+    [ "joystick5:HORZ", "esp:1", "orange", [ "v28.8", "h-115.2", "v124.8" ] ],
+    [ "joystick6:HORZ", "esp:4", "orange", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
